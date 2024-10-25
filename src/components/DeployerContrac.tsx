@@ -28,9 +28,10 @@ export default function DeployerContrac() {
     setLoading(true);
     setError(null);
 
-      const result = await fetch('/api/tu-endpoint', {
+      const result = await fetch('/api/escrow/deployer/invoke-deployer-contract', {
         method: 'POST',
         headers: {
+           'Accept': '*/*',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
@@ -62,7 +63,7 @@ export default function DeployerContrac() {
 
         <div>
           <label htmlFor="description" className="block font-medium text-gray-700">
-            Descripción
+          Description
           </label>
           <textarea
             id="description"
@@ -92,7 +93,7 @@ export default function DeployerContrac() {
 
         <div>
           <label htmlFor="amount" className="block font-medium text-gray-700">
-            Monto
+            Amount
           </label>
           <input
             type="text"
@@ -107,7 +108,7 @@ export default function DeployerContrac() {
 
         <div>
           <label htmlFor="signer" className="block font-medium text-gray-700">
-            Firmante
+          Signer
           </label>
           <input
             type="text"

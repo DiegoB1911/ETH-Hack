@@ -26,9 +26,10 @@ export default function FundEscrow() {
     setLoading(true);
     setError(null);
 
-      const result = await fetch('/api/tu-endpoint', {
+      const result = await fetch('/api/escrow/fund-escrowt', {
         method: 'POST',
         headers: {
+           'Accept': '*/*',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
